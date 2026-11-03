@@ -1250,7 +1250,16 @@ textarea:focus-visible {
   animation: mesh-drift 24s linear infinite;
 }
 .revival-hero .hero-edition, .revival-hero .hero-bottom p { color: #b7ced2; }
-.revival-hero h1 > span:first-of-type { color: #92e2d9; }
+.revival-hero #hero-title > .hero-type-line { display: block; color: #effbf8; white-space: nowrap; }
+.revival-hero #hero-title > .hero-type-accent { color: #92e2d9; }
+.hero-type-letter {
+  opacity: 0;
+  animation: type-letter 1ms linear var(--type-delay) forwards;
+}
+@keyframes type-letter { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-type-letter { opacity: 1; animation: none; }
+}
 .revival-hero .live-dot { background: #92e2d9; box-shadow: 0 0 14px #92e2d980; }
 .revival-hero .button { background: #a5eee0; color: #102a32; }
 .revival-hero .button:hover { background: #d0fff2; }
@@ -1337,4 +1346,44 @@ textarea:focus-visible {
   .team-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* Soft depth and a precise directional cue for primary actions. */
+.button,
+.revival-header .button {
+  border-radius: 999px;
+  border: 1px solid #ffffff24;
+  background: linear-gradient(135deg, #284c5a, #142634);
+  box-shadow: inset 0 1px 0 #ffffff1f, 0 5px 14px #14263414;
+  gap: 18px;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+.button > svg {
+  flex-shrink: 0;
+  padding: 6px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: #ffffff16;
+  transition: transform 200ms ease;
+}
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 #ffffff30, 0 9px 22px #14263426;
+}
+.button:hover > svg { transform: rotate(45deg); }
+.button:active { transform: translateY(0); }
+.revival-hero .button {
+  background: linear-gradient(120deg, #c4ffee, #8eddd6);
+  border-color: #d6fff480;
+  color: #102a32;
+  box-shadow: inset 0 1px 0 #ffffffa6, 0 6px 26px #80e6d425;
+}
+.revival-hero .button > svg { background: #102a3212; }
+.revival-hero .button:hover {
+  background: linear-gradient(120deg, #ddfff5, #a3eee0);
+  box-shadow: inset 0 1px 0 #ffffffb3, 0 10px 30px #80e6d43b;
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .button > svg { transition: none; }
+  .button:hover, .button:hover > svg { transform: none; }
 }

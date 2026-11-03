@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck, Check } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
+import HeroHeadline from "@/components/sections/HeroHeadline";
 import { content } from "./content";
 const icons = [RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck];
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
           <span className="hero-edition">EXCELSIS ACQUISITION / 2026</span>
         </div>
         <div className="hero-heading-row">
-          <h1 id="hero-title">Consults,<br /><span>not clicks.</span></h1>
+          <HeroHeadline />
           <div className="hero-nexus" aria-hidden="true">
             <div className="nexus-orbit nexus-orbit-one"><i /></div>
             <div className="nexus-orbit nexus-orbit-two"><i /></div>
