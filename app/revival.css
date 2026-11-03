@@ -1253,6 +1253,38 @@ textarea:focus-visible {
   margin: 65px 0 44px;
 }
 .revival-hero .hero-heading-row h1 { min-width: 0; margin: 0; font-size: clamp(58px, 8.4vw, 130px); }
+.revival-hero #hero-title {
+  isolation: isolate;
+  text-shadow: 0 3px 28px #07182290;
+}
+.revival-hero #hero-title::before,
+.revival-hero #hero-title::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+.revival-hero #hero-title::before {
+  inset: -35% -12%;
+  background: radial-gradient(ellipse at 35% 50%, #4fdac22b, transparent 60%),
+    radial-gradient(ellipse at 70% 35%, #5e9deb25, transparent 55%);
+  filter: blur(18px);
+  animation: headline-glow 12s ease-in-out infinite alternate;
+}
+.revival-hero #hero-title::after {
+  inset: -20% -8%;
+  border-radius: 50%;
+  background: repeating-radial-gradient(ellipse at center, transparent 0 37px, #9ceee624 38px 39px, transparent 40px 66px);
+  mask-image: linear-gradient(110deg, transparent 5%, black 40%, transparent 90%);
+  transform: rotate(-18deg) scaleY(.75);
+  animation: headline-wave 16s ease-in-out infinite alternate;
+}
+@keyframes headline-glow {
+  to { transform: translate(8%, -6%) scale(1.12); }
+}
+@keyframes headline-wave {
+  to { transform: rotate(-8deg) scale(1.08, .9); opacity: .45; }
+}
 .hero-nexus { width: 100%; aspect-ratio: 1; position: relative; display: grid; place-items: center; pointer-events: none; }
 .hero-nexus::before { content: ""; position: absolute; inset: 5%; border-radius: 50%; background: radial-gradient(circle, #7ee7d92b, transparent 65%); }
 .nexus-core {
