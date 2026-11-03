@@ -15,8 +15,16 @@ export default function Home() {
         <div className="hero-heading-row">
           <HeroHeadline />
           <div className="hero-nexus" aria-hidden="true">
-            <div className="nexus-orbit nexus-orbit-one"><i /></div>
-            <div className="nexus-orbit nexus-orbit-two"><i /></div>
+            <div className="nexus-orbit nexus-orbit-one" />
+            <svg className="nexus-tooth-orbit" viewBox="0 0 300 350">
+              <path id="nexus-tooth-track" d="M150 58C111 43 60 21 35 65C9 109 45 155 57 197C70 245 68 306 95 310C123 315 117 220 151 218C185 216 175 309 203 310C233 311 230 247 245 198C259 151 291 108 264 66C240 27 195 45 150 58Z" />
+              <circle className="nexus-tooth-traveler" r="4">
+                <animateMotion dur="18s" repeatCount="indefinite" calcMode="paced">
+                  <mpath href="#nexus-tooth-track" />
+                </animateMotion>
+              </circle>
+              <circle className="nexus-tooth-rest" cx="150" cy="58" r="4" />
+            </svg>
             <div className="nexus-orbit nexus-orbit-three" />
             <div className="nexus-core"><span>✳</span></div>
             <span className="nexus-caption">FIND · REVIVE · FILL</span>
