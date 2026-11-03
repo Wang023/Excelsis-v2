@@ -6,29 +6,20 @@ const icons = [RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck];
 export default function Home() {
   return <>
       <section className="revival-hero" aria-labelledby="hero-title">
+        <div className="hero-atmosphere" aria-hidden="true"><div className="hero-aurora" /><div className="hero-mesh" /></div>
         <div className="hero-topline">
           <span className="eyebrow"><span className="live-dot" /> EXCLUSIVELY FOR INVISALIGN PRACTICES</span>
           <span className="hero-edition">EXCELSIS ACQUISITION / 2026</span>
         </div>
         <div className="hero-heading-row">
           <h1 id="hero-title">Consults,<br /><span>not clicks.</span></h1>
-          <svg className="revival-tooth" viewBox="0 0 300 350" aria-hidden="true">
-            <defs>
-              <linearGradient id="tooth" x1="0" y1="0" x2="1" y2="1">
-                <stop stopColor="#f0fff7" />
-                <stop offset=".35" stopColor="#bce9d7" />
-                <stop offset=".65" stopColor="#5c9e85" />
-                <stop offset="1" stopColor="#173e32" />
-              </linearGradient>
-              <linearGradient id="shine">
-                <stop stopColor="white" stopOpacity=".7" />
-                <stop offset="1" stopColor="white" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            <path d="M150 58C111 43 60 21 35 65C9 109 45 155 57 197C70 245 68 306 95 310C123 315 117 220 151 218C185 216 175 309 203 310C233 311 230 247 245 198C259 151 291 108 264 66C240 27 195 45 150 58Z" fill="url(#tooth)" stroke="#d2f6e5" strokeWidth="1.5" />
-            <path d="M54 76C37 113 71 151 80 194C85 215 88 247 94 259C92 195 90 161 75 129C65 107 65 86 83 67Z" fill="url(#shine)" />
-            <path d="M85 62C113 56 143 88 177 77C199 70 223 56 244 72" fill="none" stroke="#effff6" strokeOpacity=".55" strokeWidth="4" />
-          </svg>
+          <div className="hero-nexus" aria-hidden="true">
+            <div className="nexus-orbit nexus-orbit-one"><i /></div>
+            <div className="nexus-orbit nexus-orbit-two"><i /></div>
+            <div className="nexus-orbit nexus-orbit-three" />
+            <div className="nexus-core"><span>✳</span></div>
+            <span className="nexus-caption">FIND · REVIVE · FILL</span>
+          </div>
         </div>
         <div className="hero-bottom">
           <div>
