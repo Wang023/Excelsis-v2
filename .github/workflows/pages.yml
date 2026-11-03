@@ -24,7 +24,7 @@ jobs:
       - run: npm run lint
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /Excelsis
+          NEXT_PUBLIC_BASE_PATH: /Excelsis-v2
           NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL }}
       - uses: actions/upload-pages-artifact@v3
         with:
