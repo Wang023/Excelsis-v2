@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import "./globals.css";
 import "./revival.css";
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </a>
         <Navbar />
         <main id="main">{children}</main>
+        <ScrollReveal />
         <Footer />
       </body>
     </html>
