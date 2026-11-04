@@ -1336,3 +1336,53 @@ textarea:focus-visible {
   .button, .button > svg { transition: none; }
   .button:hover, .button:hover > svg { transform: none; }
 }
+
+/* Keep the primary action in the first viewport and navigation in reach. */
+:root { --site-header-height: 72px; }
+html { scroll-padding-top: calc(var(--site-header-height) + 16px); }
+.revival-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--site-header-height);
+  background: #0b1c27;
+  color: #effbf8;
+  border-bottom: 1px solid #92e2d926;
+}
+.revival-header .brand-mark,
+.revival-header .menu,
+.revival-header nav a:hover,
+.revival-header nav a[aria-current] { color: #92e2d9; }
+.revival-header nav a[aria-current]::after { background: #92e2d9; }
+.revival-header .nav-cta { background: #a5eee0; color: #102a32; }
+.revival-header .nav-cta:hover { background: #d0fff2; }
+.revival-header .nav-cta > svg { background: #102a3212; }
+.revival-hero {
+  min-height: min(660px, calc(100svh - var(--site-header-height)));
+  padding-top: 20px;
+  padding-bottom: 28px;
+}
+.revival-hero .hero-heading-row { margin: clamp(20px, 4svh, 44px) 0 24px; }
+.revival-hero .hero-heading-row h1 { font-size: clamp(48px, min(8.4vw, 13svh), 114px); }
+.revival-hero .hero-conversion { max-width: 540px; }
+.revival-hero .hero-conversion p { margin-bottom: 20px; font-size: 17px; line-height: 1.65; }
+@media (max-width: 850px) {
+  :root { --site-header-height: 64px; }
+  .revival-header nav {
+    top: var(--site-header-height);
+    background: #0b1c27;
+    color: #effbf8;
+    border-color: #92e2d926;
+  }
+}
+@media (max-width: 700px) {
+  .revival-hero { min-height: auto; padding-top: 22px; padding-bottom: 28px; }
+  .revival-hero .hero-heading-row { margin: 28px 0 22px; }
+  .revival-hero .hero-heading-row h1 { font-size: clamp(44px, 12.8vw, 78px); }
+  .revival-hero .hero-conversion p { font-size: 15px; line-height: 1.65; }
+  .revival-hero .hero-bottom { gap: 24px; }
+}
+@media (max-height: 650px) and (min-width: 701px) {
+  .revival-hero .hero-heading-row { margin-top: 16px; margin-bottom: 18px; }
+  .revival-hero .hero-conversion p { font-size: 15px; margin-bottom: 16px; }
+}
