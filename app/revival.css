@@ -1276,36 +1276,17 @@ textarea:focus-visible {
   isolation: isolate;
   text-shadow: 0 3px 28px #07182290;
 }
-/* Place the supporting message and action alongside the headline. */
-.hero-heading-row { grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr); gap: 6%; }
-.hero-conversion {
-  min-width: 0;
-  padding: 26px 0 26px 28px;
-  border-left: 1px solid #92e2d95c;
-  background: linear-gradient(90deg, #0b1c2766, transparent);
-}
-.hero-conversion p {
-  margin: 0 0 30px;
-  max-width: 430px;
-  color: #d5e6e7;
-  font-size: clamp(17px, 1.45vw, 21px);
-  line-height: 1.75;
-  text-shadow: 0 2px 12px #0b1c27;
-}
+/* Supporting copy and CTA return to the lower left of the hero. */
+.hero-heading-row { grid-template-columns: minmax(0, 1fr); }
+.hero-conversion { min-width: 0; max-width: 510px; }
+.revival-hero .hero-conversion p { color: #d5e6e7; text-shadow: 0 2px 12px #0b1c27; }
 .hero-conversion .button { max-width: 100%; }
-.revival-hero .hero-bottom { justify-content: flex-end; }
 @media (max-width: 1050px) {
-  .hero-heading-row { grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr); gap: 24px; }
   .revival-hero .hero-heading-row h1 { font-size: clamp(48px, 7.8vw, 82px); }
-  .hero-conversion { padding-left: 20px; }
-  .hero-conversion .button { padding: 15px; gap: 10px; font-size: 11px; }
 }
 @media (max-width: 700px) {
-  .hero-heading-row { grid-template-columns: minmax(0, 1fr); gap: 32px; margin: 40px 0 48px; }
+  .hero-heading-row { margin: 40px 0 48px; }
   .revival-hero .hero-heading-row h1 { font-size: clamp(44px, 14.5vw, 90px); }
-  .hero-conversion { padding: 0; border-left: 0; background: none; }
-  .hero-conversion p { max-width: 460px; font-size: 17px; margin-bottom: 26px; }
-  .hero-conversion .button { font-size: 12px; padding: 17px 20px; }
   .revival-hero { min-height: auto; }
   .revival-hero .hero-bottom { margin-top: 0; }
 }

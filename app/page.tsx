@@ -15,12 +15,12 @@ export default function Home() {
         </div>
         <div className="hero-heading-row">
           <HeroHeadline />
+        </div>
+        <div className="hero-bottom">
           <div className="hero-conversion">
             <p>We turn the Invisalign leads you’ve already paid for into booked consults, then keep your calendar full with Meta ads built to convert.</p>
             <Link className="button" href="#contact">Get your free Lead Leak Report <ArrowUpRight size={18} /></Link>
           </div>
-        </div>
-        <div className="hero-bottom">
           <div className="hero-signoff">
             <span>Find. Revive. Fill.</span>
             <a href="#what-we-do" aria-label="Explore what we do">
