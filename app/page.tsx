@@ -2,12 +2,13 @@ import Link from "next/link";
 import { ArrowDown, ArrowUpRight, RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck, Check } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
 import HeroHeadline from "@/components/sections/HeroHeadline";
+import HeroAtmosphere from "@/components/sections/HeroAtmosphere";
 import { content } from "./content";
 const icons = [RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck];
 export default function Home() {
   return <>
       <section className="revival-hero" aria-labelledby="hero-title">
-        <div className="hero-atmosphere" aria-hidden="true"><div className="hero-aurora" /><div className="hero-mesh" /></div>
+        <HeroAtmosphere />
         <div className="hero-topline">
           <span className="eyebrow"><span className="live-dot" /> EXCLUSIVELY FOR INVISALIGN PRACTICES</span>
           <span className="hero-edition">EXCELSIS ACQUISITION / 2026</span>
