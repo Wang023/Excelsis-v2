@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <div className="hero-bottom">
           <div className="hero-conversion">
-            <p>We turn the Invisalign leads you’ve already paid for into booked consults, then keep your calendar full with Meta ads built to convert.</p>
+            <p>We turn the Invisalign leads you’ve already paid for into booked consults, then bring in new patients and follow up until they show.</p>
             <Link className="button" href="#contact">Get your free Lead Leak Report <ArrowUpRight size={18} /></Link>
           </div>
           <div className="hero-signoff">
