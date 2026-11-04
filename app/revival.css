@@ -1389,4 +1389,4 @@ html { scroll-padding-top: calc(var(--site-header-height) + 16px); }
 
 /* Give the supporting copy a measured gap below the headline. */
 .revival-hero .hero-bottom { margin-top: 0; }
-.revival-hero .hero-heading-row { margin-bottom: clamp(32px, 5svh, 48px); }
+.revival-hero .hero-heading-row { margin-bottom: clamp(64px, 10svh, 96px); }
