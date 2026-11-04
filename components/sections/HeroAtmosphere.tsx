@@ -24,29 +24,33 @@ export default function HeroAtmosphere() {
     const draw = () => {
       context.clearRect(0, 0, width, height);
       const paths = Array.from({ length: 8 }, () => new Path2D());
-      const spacing = Math.max(width < 600 ? 8 : 7, Math.sqrt(width * height / 22000));
+      const spacing = Math.max(width < 600 ? 3.8 : 4.5, Math.sqrt(width * height / 56000));
       for (let x = -spacing; x < width + spacing; x += spacing) {
         const u = x / width;
-        // Broad, overlapping ribbons drift across a finer fabric-like wave.
-        const ridge = .38 + .25 * Math.sin(u * 5.6 + time * .22);
-        const second = .7 + .22 * Math.cos(u * 5 - time * .18);
         for (let y = -spacing; y < height + spacing; y += spacing) {
           const v = y / height;
-          const a = Math.exp(-Math.pow((v - ridge) / .2, 2));
-          const b = Math.exp(-Math.pow((v - second) / .16, 2));
-          const weave = .7 + .3 * Math.sin(u * 13 + v * 9 + time * .3);
-          const intensity = Math.min(1, (a * .8 + b * .65) * weave);
-          if (intensity < .045) continue;
-          const px = x + Math.sin(v * 9 + time * .18) * 7;
-          const py = y + Math.sin(u * 8 - time * .2) * 9;
-          const radius = .35 + intensity * 1.35;
+          // A warped interference field creates broad organic islands and
+          // dark channels, rather than separate, evenly spaced sine ribbons.
+          const warp = Math.sin(v * 5.2 + time * .14) * .95;
+          const field = Math.sin(u * 6.1 + v * 3.2 + warp - time * .13)
+            + .72 * Math.cos(v * 5.8 - u * 2.2 + time * .11);
+          const level = Math.max(0, Math.min(1, (field + .55) / 1.75));
+          const envelope = level * level * (3 - 2 * level);
+          // Stable fine grain adds the reference's woven halftone texture.
+          const grain = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
+          const noise = grain - Math.floor(grain);
+          const intensity = Math.max(0, Math.min(1, envelope * (.65 + noise * .5)));
+          if (intensity < .035) continue;
+          const px = x + Math.sin(v * 7 + u * 3 + time * .12) * 2.5;
+          const py = y + Math.sin(u * 6 - v * 2 - time * .11) * 3;
+          const radius = .3 + intensity * spacing * .29;
           const path = paths[Math.min(7, Math.floor(intensity * 8))];
           path.moveTo(px + radius, py);
           path.arc(px, py, radius, 0, Math.PI * 2);
         }
       }
       paths.forEach((path, index) => {
-        context.fillStyle = `rgba(${110 + index * 9}, ${183 + index * 8}, ${190 + index * 7}, ${.08 + index * .055})`;
+        context.fillStyle = `rgba(${116 + index * 8}, ${184 + index * 8}, ${188 + index * 6}, ${.1 + index * .075})`;
         context.fill(path);
       });
     };
@@ -54,7 +58,7 @@ export default function HeroAtmosphere() {
     const tick = (now: number) => {
       frame = 0;
       if (disposed || motion.matches || !inView || document.hidden) return;
-      if (!previous || now - previous >= 1000 / 30) {
+      if (!previous || now - previous >= 1000 / 24) {
         if (previous) time += Math.min((now - previous) / 1000, .1);
         previous = now;
         draw();

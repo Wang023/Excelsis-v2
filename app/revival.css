@@ -1239,15 +1239,14 @@ textarea:focus-visible {
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  background: radial-gradient(ellipse at 80% 20%, #1b454f66, transparent 65%), #0b1c27;
+  background: #0b1c27;
 }
 .hero-dot-field { display: block; width: 100%; height: 100%; }
 .hero-atmosphere::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #0b1c2799, transparent 45%),
-    radial-gradient(ellipse at 28% 48%, #0b1c2780, transparent 60%);
+  background: linear-gradient(0deg, #0b1c2733, transparent 35%);
 }
 .revival-hero .hero-edition, .revival-hero .hero-bottom p { color: #b7ced2; }
 .revival-hero #hero-title > .hero-type-line { display: block; color: #effbf8; white-space: nowrap; }
