@@ -11,26 +11,18 @@ export default function HeroHeadline() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let interval: ReturnType<typeof setInterval> | undefined;
-    let arrival = 0;
-    const start = () => {
-      clearInterval(interval);
-      cancelAnimationFrame(arrival);
-      if (motion.matches) return;
-      // Randomise the first pair, then alternate so neither is repeated.
-      arrival = requestAnimationFrame(() => setActive(Math.random() < .5 ? 0 : 1));
-      interval = setInterval(() => {
-        if (!document.hidden) setActive((previous) => 1 - previous);
-      }, 8000);
-    };
-    start();
-    motion.addEventListener("change", start);
-    return () => {
-      clearInterval(interval);
-      cancelAnimationFrame(arrival);
-      motion.removeEventListener("change", start);
-    };
+    const arrival = requestAnimationFrame(() => {
+      let next = Math.random() < .5 ? 0 : 1;
+      try {
+        const previous = sessionStorage.getItem("excelsis-hero-headline");
+        if (previous === "0" || previous === "1") next = 1 - Number(previous);
+        sessionStorage.setItem("excelsis-hero-headline", String(next));
+      } catch {
+        // Random selection still works when browser storage is unavailable.
+      }
+      setActive(next);
+    });
+    return () => cancelAnimationFrame(arrival);
   }, []);
 
   const lines = headlines[active];
