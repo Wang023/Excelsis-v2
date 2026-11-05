@@ -147,3 +147,13 @@ textarea:focus-visible, select:focus-visible { outline-color: var(--focus-color)
 .insight-art > span, .insight-art small { color: var(--ember); }
 .art-1 { background: var(--navy); }
 .art-1 > span, .art-1 small { color: var(--coral-soft); }
+
+/* One complete first screen on phones, including the sticky navbar. */
+@media (max-width: 700px) {
+  .revival-hero {
+    min-height: calc(100svh - var(--site-header-height));
+    min-height: calc(100dvh - var(--site-header-height));
+  }
+  .revival-hero .hero-bottom { flex: 1; }
+  .revival-hero .hero-signoff { margin-top: auto; }
+}
