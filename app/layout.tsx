@@ -4,6 +4,7 @@ import Footer from "@/components/ui/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import "./globals.css";
 import "./revival.css";
+import "./palette.css";
 export const metadata: Metadata = {
   title: {
     default: "Excelsis Acquisition — Consults, not clicks.",

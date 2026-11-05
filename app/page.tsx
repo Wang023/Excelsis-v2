@@ -4,6 +4,7 @@ import ContactForm from "@/components/sections/ContactForm";
 import HeroHeadline from "@/components/sections/HeroHeadline";
 import HeroAtmosphere from "@/components/sections/HeroAtmosphere";
 import { content } from "./content";
+import BrandMark from "@/components/ui/BrandMark";
 const icons = [RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck];
 export default function Home() {
   return <>
@@ -75,7 +76,7 @@ export default function Home() {
       <section className="program-section" id="the-program">
         <div className="revival-section">
           <div className="section-kicker">
-            <span>03 / THE INVISALIGN REVIVAL PROGRAM</span>
+            <span>03 / WHY WE’RE DIFFERENT</span>
             <span>ONE CONNECTED SYSTEM</span>
           </div>
           <div className="program-layout">
@@ -83,7 +84,7 @@ export default function Home() {
               <h2>Everything between your ad and your chair, <span>handled.</span></h2>
               <p>Most agencies stop at the lead and leave your front desk to chase it. We own every step until the consult is on your calendar, and we only get paid when it is.</p>
               <Link className="text-link" href="#contact">Find your opportunity <ArrowUpRight size={18} /></Link>
-              <div className="program-seal" aria-hidden="true">✳<span>FIND. REVIVE. FILL.</span></div>
+              <div className="program-seal" aria-hidden="true"><BrandMark /><span>FIND. REVIVE. FILL.</span></div>
             </div>
             <div className="program-list">
               {content.program.map((item, i) => <article key={item.title}>
@@ -101,38 +102,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="revival-section" id="the-math">
-        <div className="section-kicker">
-          <span>04 / THE MATH</span>
-          <span>YOUR NUMBERS. A CLEARER PICTURE.</span>
-        </div>
-        <div className="math-layout">
-          <div>
-            <h2>You only need <span>one case</span> to come out ahead.</h2>
-            <p className="section-copy">
-              {content.math}
-            </p>
-            <p className="availability">
-              <span className="live-dot" />
-              {content.scarcity}
-            </p>
-          </div>
-          <div className="guarantee-card">
-            <div className="eyebrow"><Check size={17} /> OUR BOOKING GUARANTEE</div>
-            <div className="guarantee-number">6<span> / 30</span></div>
-            <h3>6 booked consults in 30 days.</h3>
-            <p>
-              {content.guarantee}
-            </p>
-            <div className="guarantee-fine">
-              {content.finePrint}
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="revival-section team-section" id="team">
         <div className="section-kicker">
-          <span>05 / THE TEAM</span>
+          <span>04 / THE TEAM</span>
           <span>THE PEOPLE BEHIND THE CONVERSATIONS</span>
         </div>
         <div className="team-heading">
@@ -177,10 +149,40 @@ export default function Home() {
           </article>
         </div>
       </section>
+      <section className="revival-section" id="the-math">
+        <div className="section-kicker">
+          <span>05 / THE MATH</span>
+          <span>YOUR NUMBERS. A CLEARER PICTURE.</span>
+        </div>
+        <div className="math-layout">
+          <div>
+            <h2>You only need <span>one case</span> to come out ahead.</h2>
+            <p className="section-copy">
+              {content.math}
+            </p>
+            <p className="availability">
+              <span className="live-dot" />
+              {content.scarcity}
+            </p>
+          </div>
+          <div className="guarantee-card">
+            <div className="eyebrow"><Check size={17} /> OUR BOOKING GUARANTEE</div>
+            <div className="guarantee-number">6<span> / 30</span></div>
+            <h3>6 booked consults in 30 days.</h3>
+            <p>
+              {content.guarantee}
+            </p>
+            <div className="guarantee-fine">
+              {content.finePrint}
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="contact-section" id="contact">
+        <HeroAtmosphere />
         <div className="revival-section">
           <div className="section-kicker">
-            <span>06 / FIND. REVIVE. FILL.</span>
+            <span>06 / BOOK A CALL</span>
             <span>YOUR NEXT CHAPTER STARTS HERE</span>
           </div>
           <div className="report-layout">

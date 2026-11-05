@@ -1,0 +1,149 @@
+/* Navy / ember / cream / coral: the supplied site-wide palette. */
+:root {
+  --subtle: #5b6070;
+  --soft-teal: #14213D0D;
+  --section-muted: #5b6070;
+  --section-border: #14213D26;
+  --section-accent: var(--ember);
+  --focus-color: var(--ember);
+}
+body { background: var(--cream); color: var(--navy); }
+::selection { background: var(--coral); color: var(--navy); }
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible { outline-color: var(--focus-color); }
+.brand-mark { color: var(--coral); }
+.revival-header,
+.revival-header nav,
+.revival-hero,
+.program-section,
+.contact-section {
+  background: var(--navy);
+  color: var(--cream);
+  --focus-color: var(--coral-soft);
+}
+.revival-header { border-color: #F4EDE026; }
+.revival-header .brand-mark,
+.revival-header .menu,
+.revival-header nav a:hover,
+.revival-header nav a[aria-current] { color: var(--coral-soft); }
+.revival-header nav a[aria-current]::after { background: var(--coral); }
+.revival-hero,
+#what-we-do,
+#how-it-works,
+#team,
+#the-math {
+  max-width: none;
+  padding-left: max(6%, calc((100vw - 1408px) / 2));
+  padding-right: max(6%, calc((100vw - 1408px) / 2));
+}
+#what-we-do, #the-math, .revival-footer {
+  background: var(--deep-navy);
+  color: var(--cream);
+}
+#how-it-works, #team { background: var(--cream); color: var(--navy); }
+#what-we-do, #the-math, .program-section, .contact-section, .revival-footer {
+  --subtle: #F4EDE0BF;
+  --section-muted: #F4EDE0BF;
+  --section-border: #F4EDE026;
+  --section-accent: var(--coral-soft);
+  --line: #F4EDE026;
+  --focus-color: var(--coral-soft);
+}
+.revival-section { border-color: var(--section-border); }
+.section-kicker, .section-copy, .team-heading p,
+.revival-card p, .revival-steps p, .program-list p, .team-grid p,
+.team-name > span { color: var(--section-muted); }
+.revival-section h2 span { color: var(--section-accent); }
+.revival-card {
+  background: #14213D80;
+  border-color: var(--section-border);
+  color: var(--cream);
+}
+.card-top, .card-top span { color: var(--coral-soft); }
+.large-number, .revival-steps h3 span { color: var(--ember); }
+.program-section .section-kicker,
+.program-intro > p, .program-section .program-list p { color: var(--section-muted); }
+.program-intro .text-link { color: var(--coral-soft); border-color: #FF9A8B66; }
+.program-seal, .program-list article > span { color: var(--section-accent); }
+.program-list article { border-color: var(--section-border); }
+.portrait-placeholder, .portrait-placeholder.carson {
+  background: #14213D0D;
+  border-color: #14213D26;
+  color: var(--ember);
+}
+.guarantee-card {
+  background: var(--navy);
+  color: var(--cream);
+  border: 1px solid #FF6B5B66;
+  box-shadow: 0 0 70px #FF6B5B14, inset 0 1px 0 #FF9A8B1F;
+}
+.guarantee-number { color: var(--coral); }
+.guarantee-number > span { color: var(--coral-soft); }
+.guarantee-card p, .guarantee-fine { color: var(--section-muted); }
+.guarantee-fine { border-color: var(--section-border); }
+.live-dot { background: var(--coral); }
+.availability { border-color: var(--section-border); }
+.revival-hero .hero-edition,
+.revival-hero .hero-conversion p { color: var(--cream); text-shadow: 0 2px 12px var(--navy); }
+.revival-hero #hero-title { text-shadow: 0 3px 28px #0B132890; }
+.revival-hero #hero-title > .hero-type-line { color: var(--cream); }
+.revival-hero #hero-title > .hero-type-accent { color: var(--coral-soft); }
+.revival-hero .live-dot { background: var(--coral); box-shadow: 0 0 14px #FF6B5B80; }
+.revival-hero .hero-signoff a { border-color: #F4EDE04D; }
+.revival-hero .hero-signoff a:hover { background: #F4EDE014; }
+.button,
+.revival-header .button,
+.revival-header .nav-cta,
+.revival-hero .button {
+  background: var(--coral);
+  color: var(--navy);
+  border-color: #FF9A8B80;
+  box-shadow: inset 0 1px 0 #F4EDE04D, 0 6px 24px #0B13281F;
+}
+.button:hover,
+.revival-header .button:hover,
+.revival-header .nav-cta:hover,
+.revival-hero .button:hover {
+  background: var(--coral-soft);
+  color: var(--navy);
+  box-shadow: inset 0 1px 0 #F4EDE04D, 0 9px 26px #0B132833;
+}
+.button > svg, .revival-header .nav-cta > svg, .revival-hero .button > svg { background: #14213D14; }
+.contact-section { position: relative; isolation: isolate; overflow: hidden; }
+.contact-section > .revival-section { position: relative; }
+.report-includes > span { color: var(--section-muted); }
+.report-includes svg { color: var(--coral-soft); }
+.report-form input, .report-form textarea { background: var(--cream); border-color: #14213D40; color: var(--navy); }
+.report-form input::placeholder { color: #5b6070; }
+.contact-section .report-form input,
+.contact-section .report-form textarea { background: #0B1328CC; color: var(--cream); border-color: #F4EDE04D; }
+.contact-section .report-form input::placeholder { color: #F4EDE099; }
+.report-form .form-note { color: var(--section-muted); }
+.report-form input:focus, .report-form textarea:focus { border-color: var(--coral); box-shadow: 0 0 0 2px #FF6B5B26; }
+.draft-result { border-color: var(--section-border); }
+.revival-footer .footer-top { border-color: var(--section-border); }
+.revival-footer .footer-top p, .revival-footer .footer-bottom,
+.footer-links .eyebrow, .footer-contact .eyebrow, .trademark-note { color: var(--section-muted); }
+.footer-links a:hover { color: var(--coral-soft); }
+
+/* Exact shader colors; static dithering covers unsupported/lost WebGL contexts. */
+.hero-atmosphere {
+  background: radial-gradient(ellipse at 25% 15%, #7A3A4A45, transparent 55%),
+    repeating-conic-gradient(var(--ember) 0% 25%, var(--navy) 0% 50%) 0 0 / 4px 4px;
+}
+.hero-dot-field { opacity: 0; }
+.hero-dot-field[data-renderer="webgl"] { opacity: 1; }
+.hero-atmosphere::after {
+  background: radial-gradient(ellipse at center,
+    #14213D00 0%, #14213D66 70%, #14213DB3 100%);
+}
+
+/* Keep the mark in the palette on devices that render the old symbol as emoji. */
+.brand-mark { display: inline-flex; }
+.brand-mark svg { display: block; width: 1em; height: 1em; }
+.program-seal > .brand-mark { font-size: inherit; letter-spacing: 0; }
+.page-intro { background: var(--cream); border-color: var(--line); }
+.insight-art, .art-2 { background: #14213D0D; }
+.insight-art > span, .insight-art small { color: var(--ember); }
+.art-1 { background: var(--navy); }
+.art-1 > span, .art-1 small { color: var(--coral-soft); }

@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap");
 :root {
-  --ink: #142634;
-  --dark: #142634;
-  --mint: #83b8be;
-  --paper: #f6f4ef;
-  --muted: #b8a17d;
-  --line: #d8d3c8;
+  --navy: #14213D;
+  --deep-navy: #0B1328;
+  --ember: #7A3A4A;
+  --cream: #F4EDE0;
+  --coral: #FF6B5B;
+  --coral-soft: #FF9A8B;
+  --dither-bg: #14213D;
+  --dither-front: #7A3A4A;
+  --ink: var(--navy);
+  --dark: var(--deep-navy);
+  --mint: var(--coral);
+  --paper: var(--cream);
+  --muted: #5b6070;
+  --line: #14213D26;
 }
-/* 
-  --ink: #183b30;
-  --dark: #102e25;
-  --mint: #c3edcd;
-  --paper: #f7f8f2;
-  --muted: #6c776e;
-  --line: #dfe4da;
-*/
 * {
   box-sizing: border-box;
 }
