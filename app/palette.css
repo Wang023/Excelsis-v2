@@ -157,3 +157,32 @@ textarea:focus-visible, select:focus-visible { outline-color: var(--focus-color)
   .revival-hero .hero-bottom { flex: 1; }
   .revival-hero .hero-signoff { margin-top: auto; }
 }
+
+/* A larger, centered mobile introduction with a quiet scroll cue below. */
+@media (max-width: 700px) {
+  .revival-hero {
+    text-align: center;
+    padding-bottom: 100px;
+  }
+  .revival-hero .hero-topline { justify-content: center; }
+  .revival-hero .hero-topline .eyebrow { font-size: 9px; letter-spacing: .8px; }
+  .revival-hero .hero-heading-row { margin: auto 0 28px; padding-top: 32px; flex-shrink: 0; }
+  .revival-hero .hero-heading-row h1 { font-size: clamp(28px, 8.6vw, 54px); line-height: 1.15; }
+  .revival-hero .hero-bottom { flex: 0; margin: 0 0 auto; align-items: center; gap: 0; }
+  .revival-hero .hero-conversion { width: 100%; max-width: 410px; }
+  .revival-hero .hero-conversion p {
+    margin: 0 auto 26px;
+    font-size: clamp(16px, 4.2vw, 19px);
+    line-height: 1.7;
+    max-width: 380px;
+  }
+  .revival-hero .hero-conversion .button { min-height: 64px; padding: 18px 24px; font-size: 13px; }
+  .revival-hero .hero-signoff { position: absolute; bottom: 26px; left: 6%; right: 6%; margin: 0; }
+}
+@media (max-width: 700px) and (max-height: 650px) {
+  .revival-hero { padding-bottom: 82px; padding-top: 18px; }
+  .revival-hero .hero-heading-row { padding-top: 20px; margin-bottom: 22px; }
+  .revival-hero .hero-heading-row h1 { font-size: clamp(26px, 8.3vw, 40px); }
+  .revival-hero .hero-conversion p { font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
+  .revival-hero .hero-conversion .button { min-height: 58px; padding: 15px 20px; font-size: 12px; }
+}
