@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck, Check } from "lucide-react";
+import { ArrowUpRight, RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck, Check } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
 import HeroHeadline from "@/components/sections/HeroHeadline";
 import HeroAtmosphere from "@/components/sections/HeroAtmosphere";
+import LeadConsole from "@/components/sections/LeadConsole";
 import { content } from "./content";
 import BrandMark from "@/components/ui/BrandMark";
 const icons = [RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck];
@@ -14,20 +15,24 @@ export default function Home() {
           <span className="eyebrow"><span className="live-dot" /> EXCLUSIVELY FOR INVISALIGN PRACTICES</span>
           <span className="hero-edition">EXCELSIS ACQUISITION / 2026</span>
         </div>
+        <div className="hero-split">
+        <div className="hero-main">
         <div className="hero-heading-row">
           <HeroHeadline />
         </div>
         <div className="hero-bottom">
           <div className="hero-conversion">
             <p>We turn the Invisalign leads you’ve already paid for into booked consults, then bring in new patients and follow up until they show.</p>
-            <Link className="button" href="#contact">Get your free Lead Leak Report <ArrowUpRight size={18} /></Link>
+            <Link className="button" href="#contact">Book my strategy call <ArrowUpRight size={18} /></Link>
+            <div className="hero-proof">
+              <span><b>60s</b> speed to lead</span>
+              <span><b>24/7</b> AI front desk</span>
+              <Link href="#the-math" className="hero-guarantee"><b>6 booked consults in 30 days</b><span>Or we keep working at no extra cost. Terms apply ↗</span></Link>
+            </div>
           </div>
-          <div className="hero-signoff">
-            <span>Find. Revive. Fill.</span>
-            <a href="#what-we-do" aria-label="Explore what we do">
-              <ArrowDown size={22} />
-            </a>
-          </div>
+        </div>
+        </div>
+        <LeadConsole />
         </div>
       </section>
       <section className="revival-section" id="what-we-do">

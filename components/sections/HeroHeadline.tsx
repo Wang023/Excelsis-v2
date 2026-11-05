@@ -4,7 +4,7 @@ import { useEffect, useState, type CSSProperties } from "react";
 
 const headlines = [
   ["We fill the chair", "You fix a smile"],
-  ["We handle the leads", "You bring the Smiles"],
+  ["We handle the leads", "You bring the smiles"],
 ];
 
 export default function HeroHeadline() {

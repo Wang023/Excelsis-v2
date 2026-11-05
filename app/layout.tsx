@@ -6,6 +6,7 @@ import BackToTop from "@/components/ui/BackToTop";
 import "./globals.css";
 import "./revival.css";
 import "./palette.css";
+import "./hero-console.css";
 export const metadata: Metadata = {
   title: {
     default: "Excelsis Acquisition — Consults, not clicks.",

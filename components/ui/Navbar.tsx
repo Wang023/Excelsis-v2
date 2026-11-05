@@ -33,7 +33,7 @@ export default function Navbar() {
     <nav id="main-navigation" aria-label="Main navigation" className={open ? "open" : ""}>
       {links.map(([label, id], index) => <Link key={id} href={"/#" + id} style={{ "--nav-delay": `${index * 35}ms` } as CSSProperties} onClick={() => setOpen(false)}>{label}</Link>)}
     </nav>
-    <Link className="button small nav-cta" href="/#contact">Get your Lead Leak Report <ArrowUpRight size={16} /></Link>
+    <Link className="button small nav-cta" href="/#contact">Book a call <ArrowUpRight size={16} /></Link>
     <button ref={toggleRef} className="menu" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>
       <span className="menu-icon" aria-hidden="true"><span /><span /><span /></span>
     </button>
