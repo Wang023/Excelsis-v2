@@ -245,3 +245,31 @@ textarea:focus-visible, select:focus-visible { outline-color: var(--focus-color)
 @media (prefers-reduced-motion: reduce) {
   .menu-icon > span, .revival-header nav, .revival-header nav a { transition: none; }
 }
+
+.back-to-top {
+  position: fixed;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  z-index: 40;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #FF9A8B80;
+  border-radius: 50%;
+  background: var(--coral);
+  color: var(--navy);
+  box-shadow: 0 6px 24px #0B13284D;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms;
+}
+.back-to-top.is-visible { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+.back-to-top:hover { background: var(--coral-soft); transform: translateY(-3px); }
+.back-to-top:focus-visible { outline-color: var(--coral-soft); }
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: none; }
+  .back-to-top:hover { transform: none; }
+}

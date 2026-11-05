@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import BackToTop from "@/components/ui/BackToTop";
 import "./globals.css";
 import "./revival.css";
 import "./palette.css";
@@ -24,6 +25,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <main id="main">{children}</main>
         <ScrollReveal />
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
