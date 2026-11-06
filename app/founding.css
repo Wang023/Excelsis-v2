@@ -1,0 +1,95 @@
+/* The founding-practice offer uses the existing navy, cream and coral palette. */
+.founding-hero .hero-split { align-items: start; padding-top: 36px; }
+.founding-hero .hero-main { min-width: 0; }
+.revival-hero.founding-hero .hero-heading-row { margin: 0 0 26px; padding: 0; }
+.revival-hero.founding-hero .hero-heading-row h1 {
+  font-size: clamp(34px, 3.7vw, 54px);
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  min-height: 0;
+  transform: none;
+}
+.founding-hero #hero-title > .hero-type-word { color: var(--cream); opacity: 0; animation: type-letter 1ms linear var(--type-delay) forwards; }
+.founding-hero #hero-title > .hero-headline-accent { color: var(--coral-soft); }
+.revival-hero.founding-hero .hero-conversion { max-width: 680px; }
+.revival-hero.founding-hero .hero-conversion > p { font-size: 16px; line-height: 1.7; margin: 0 0 24px; }
+.founding-promise { border-left: 2px solid var(--coral); padding: 0 0 0 18px; margin: 0 0 26px; scroll-margin-top: 100px; }
+.revival-hero.founding-hero .founding-promise p { margin: 0 0 10px; font-size: 14px; line-height: 1.75; color: var(--cream); }
+.founding-promise small { display: block; color: var(--coral-soft); font-size: 11px; line-height: 1.7; }
+.founding-hero .lead-console { align-self: center; }
+.revival-hero.founding-hero .hero-conversion .button { max-width: 100%; text-align: left; white-space: normal; }
+.founding-home .section-kicker { margin-bottom: 32px; }
+.founding-timeline { list-style: none; margin: 48px 0 0; padding: 0; max-width: 1080px; }
+.founding-timeline li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 28px; padding: 25px 0; border-top: 1px solid var(--section-border); align-items: baseline; }
+.timeline-day { font: 550 27px/1.3 "Manrope", Arial, sans-serif; letter-spacing: -1px; color: var(--ember); }
+.founding-timeline p { font-size: 17px; line-height: 1.8; color: var(--section-muted); }
+.founding-services { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.founding-services .revival-card { grid-column: auto; min-height: 280px; }
+.founding-services .revival-card:last-child { grid-column: 1 / -1; min-height: 0; }
+.founding-services .revival-card h3 { max-width: none; font-size: 22px; }
+.founding-services .revival-card:last-child .card-top { margin-bottom: 20px; }
+.founding-services .revival-card:last-child p { max-width: 900px; }
+.founding-duties { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
+.founding-ownership { font-size: 22px; color: var(--coral-soft); line-height: 1.5; }
+.founding-duties ul { list-style: none; margin: 0; padding: 0; }
+.founding-duties li { display: flex; gap: 18px; padding: 23px 0; border-top: 1px solid var(--section-border); font-size: 18px; line-height: 1.7; }
+.founding-duties svg { color: var(--coral-soft); flex-shrink: 0; margin-top: 5px; }
+.founding-fit, .founding-questions {
+  max-width: none;
+  padding-left: max(6%, calc((100vw - 1408px) / 2));
+  padding-right: max(6%, calc((100vw - 1408px) / 2));
+  background: var(--deep-navy);
+  color: var(--cream);
+  --section-muted: #F4EDE0BF;
+  --section-border: #F4EDE026;
+  --section-accent: var(--coral-soft);
+  --focus-color: var(--coral-soft);
+}
+.founding-editorial { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
+.founding-editorial p { font-size: 19px; line-height: 1.85; color: var(--section-muted); }
+.founding-editorial p + p { margin-top: 24px; }
+.founding-editorial .founding-placeholder { font-size: 14px; padding: 18px; border: 1px dashed var(--section-border); line-height: 1.7; }
+.founding-faq-list { max-width: 1000px; }
+.founding-faq-list details { border-top: 1px solid var(--section-border); padding: 24px 0; }
+.founding-faq-list details:last-child { border-bottom: 1px solid var(--section-border); }
+.founding-faq-list summary { display: flex; gap: 24px; justify-content: space-between; align-items: center; cursor: pointer; font-size: 20px; line-height: 1.5; list-style: none; }
+.founding-faq-list summary::-webkit-details-marker { display: none; }
+.founding-faq-list summary svg { flex-shrink: 0; color: var(--coral-soft); transition: transform 180ms ease; }
+.founding-faq-list details[open] summary svg { transform: rotate(45deg); }
+.founding-faq-list details p { margin: 20px 0 0; max-width: 850px; font-size: 17px; line-height: 1.85; color: var(--section-muted); }
+.founding-faq-list summary:focus-visible { outline: 2px solid var(--coral-soft); outline-offset: 8px; }
+@media (max-width: 1100px) {
+  .founding-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .revival-hero.founding-hero .hero-heading-row h1 { font-size: clamp(32px, 3.8vw, 44px); }
+}
+@media (max-width: 850px) {
+  .founding-hero .hero-split { padding-top: 30px; gap: 48px; }
+  .founding-hero .hero-main { min-height: 0; text-align: left; }
+  .revival-hero.founding-hero .hero-heading-row h1 { font-size: clamp(34px, 6.5vw, 52px); }
+  .revival-hero.founding-hero .hero-conversion > p { font-size: 16px; }
+  .founding-hero .hero-conversion { margin: 0 auto; }
+  .founding-duties, .founding-editorial { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .founding-editorial h2, .founding-duties h2 { margin-bottom: 12px; }
+}
+@media (max-width: 540px) {
+  .revival-hero.founding-hero .hero-heading-row h1 { font-size: clamp(30px, 8.3vw, 42px); }
+  .revival-hero.founding-hero .hero-conversion > p { font-size: 15px; line-height: 1.8; }
+  .revival-hero.founding-hero .hero-conversion .button { font-size: 12px; padding: 18px; gap: 12px; }
+  .founding-timeline li { grid-template-columns: 78px minmax(0, 1fr); gap: 18px; padding: 22px 0; }
+  .timeline-day { font-size: 22px; }
+  .founding-timeline p { font-size: 15px; }
+  .founding-services { grid-template-columns: minmax(0, 1fr); }
+  .founding-services .revival-card { min-height: 0; }
+  .founding-services .revival-card h3 { font-size: 21px; }
+  .founding-duties li { font-size: 16px; }
+  .founding-editorial p { font-size: 17px; }
+  .founding-faq-list summary { font-size: 17px; }
+  .founding-faq-list details p { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .founding-hero #hero-title > .hero-type-word { animation: none; opacity: 1; }
+  .founding-faq-list summary svg { transition: none; }
+}
+
+/* Preserve the old guarantee anchor without inheriting its former section padding. */
+.founding-hero #the-math { padding: 0 0 0 18px; background: transparent; }

@@ -5,7 +5,7 @@ import BrandMark from "./BrandMark";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 
-const links = [["What we do", "what-we-do"], ["How it works", "how-it-works"], ["Why we’re different", "the-program"], ["Team", "team"], ["The math", "the-math"]];
+const links = [["Your first 90 days", "how-it-works"], ["What we do", "what-we-do"], ["Your team", "the-program"], ["Who it’s for", "who-this-is-for"], ["Questions", "questions"]];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function Navbar() {
     <nav id="main-navigation" aria-label="Main navigation" className={open ? "open" : ""}>
       {links.map(([label, id], index) => <Link key={id} href={"/#" + id} style={{ "--nav-delay": `${index * 35}ms` } as CSSProperties} onClick={() => setOpen(false)}>{label}</Link>)}
     </nav>
-    <Link className="button small nav-cta" href="/#contact">Book a call <ArrowUpRight size={16} /></Link>
+    <Link className="button small nav-cta" href="/#contact">Get your free audit <ArrowUpRight size={16} /></Link>
     <button ref={toggleRef} className="menu" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>
       <span className="menu-icon" aria-hidden="true"><span /><span /><span /></span>
     </button>

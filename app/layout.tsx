@@ -7,13 +7,14 @@ import "./globals.css";
 import "./revival.css";
 import "./palette.css";
 import "./hero-console.css";
+import "./founding.css";
 export const metadata: Metadata = {
   title: {
-    default: "Excelsis Acquisition — Consults, not clicks.",
+    default: "Excelsis Acquisition — Start more Invisalign cases.",
     template: "%s | Excelsis",
   },
   description:
-    "We turn your unbooked Invisalign leads into booked consults, then keep your calendar full with Meta ads. Find. Revive. Fill.",
+    "The 90-Day Invisalign Case-Start System. Revive unstarted plans, respond to inquiries, and turn more consults into started treatment. Get your free Invisalign Lead-Leak Audit.",
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

@@ -19,8 +19,7 @@ export default function Page() {
         into a conversation, and a conversation into a booked consult.
       </p>
 
-      <h2>Kim</h2>
-      <p>Co-founder / Revival and Sales</p>
+      <h2>Josh</h2>
       <p>{content.josh}</p>
 
       <h2>Carson</h2>
@@ -32,7 +31,7 @@ export default function Page() {
       <p>[Bio coming]</p>
 
       <Link className="button" href="/#contact">
-        Get your free Lead Leak Report ↗
+        Get your free Invisalign Lead-Leak Audit ↗
       </Link>
     </section>
   );

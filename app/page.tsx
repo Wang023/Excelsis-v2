@@ -1,210 +1,99 @@
 import Link from "next/link";
-import { ArrowUpRight, RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck, Check } from "lucide-react";
+import { ArrowUpRight, RotateCcw, Timer, CalendarCheck, MessageCircle, RefreshCw, Target, ChartNoAxesCombined, Check, Plus } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
 import HeroHeadline from "@/components/sections/HeroHeadline";
 import HeroAtmosphere from "@/components/sections/HeroAtmosphere";
 import LeadConsole from "@/components/sections/LeadConsole";
 import { content } from "./content";
-import BrandMark from "@/components/ui/BrandMark";
-const icons = [RotateCcw, Target, Timer, PhoneIncoming, CalendarCheck];
+
+const icons = [RotateCcw, Timer, CalendarCheck, MessageCircle, RefreshCw, Target, ChartNoAxesCombined];
+
 export default function Home() {
-  return <>
-      <section className="revival-hero" aria-labelledby="hero-title">
-        <HeroAtmosphere />
-        <div className="hero-topline">
-          <span className="eyebrow"><span className="live-dot" /> EXCLUSIVELY FOR INVISALIGN PRACTICES</span>
-          <span className="hero-edition">EXCELSIS ACQUISITION / 2026</span>
-        </div>
-        <div className="hero-split">
+  return <div className="founding-home">
+    <section className="revival-hero founding-hero" aria-labelledby="hero-title">
+      <HeroAtmosphere />
+      <div className="hero-topline">
+        <span className="eyebrow"><span className="live-dot" /> EXCLUSIVELY FOR INVISALIGN PRACTICES</span>
+        <span className="hero-edition">FOUNDING PRACTICE / 90 DAYS</span>
+      </div>
+      <div className="hero-split">
         <div className="hero-main">
-        <div className="hero-heading-row">
-          <HeroHeadline />
-        </div>
-        <div className="hero-bottom">
+          <div className="hero-heading-row"><HeroHeadline /></div>
           <div className="hero-conversion">
-            <p>We turn the Invisalign leads you’ve already paid for into booked consults, then bring in new patients and follow up until they show.</p>
-            <Link className="button" href="#contact">Book my strategy call <ArrowUpRight size={18} /></Link>
-            <div className="hero-proof">
-              <span><b>60s</b> speed to lead</span>
-              <span><b>24/7</b> AI front desk</span>
-              <Link href="#the-math" className="hero-guarantee"><b>6 booked consults in 30 days</b><span>Or we keep working at no extra cost. Terms apply ↗</span></Link>
+            <p>{content.hero.subheadline}</p>
+            <div className="founding-promise" id="the-math">
+              <p>{content.guarantee}</p>
+              <small>{content.finePrint}</small>
             </div>
+            <Link className="button" href="#contact">{content.hero.cta}<ArrowUpRight size={18} /></Link>
           </div>
-        </div>
         </div>
         <LeadConsole />
-        </div>
-      </section>
-      <section className="revival-section" id="what-we-do">
-        <div className="section-kicker">
-          <span>01 / WHAT WE DO</span>
-          <span>FROM FIRST ENQUIRY TO FULL CALENDARS</span>
-        </div>
-        <h2 className="wide-heading">We fill Invisalign calendars,<br className="desktop" /> starting with leads <span>you already own.</span></h2>
-        <div className="revival-card-grid">
-          {content.cards.map((card, i) => {
-          const Icon = icons[i];
+      </div>
+    </section>
+
+    <section className="revival-section process-section" id="how-it-works" aria-labelledby="timeline-title">
+      <div className="section-kicker"><span>01 / YOUR FIRST 90 DAYS</span></div>
+      <h2 id="timeline-title">Your first <span>90 days.</span></h2>
+      <ol className="founding-timeline">
+        {content.steps.map((step) => <li key={step.title}><span className="timeline-day">{step.title}</span><p>{step.body}</p></li>)}
+      </ol>
+    </section>
+
+    <section className="revival-section" id="what-we-do" aria-labelledby="services-title">
+      <div className="section-kicker"><span>02 / WHAT WE DO</span></div>
+      <h2 id="services-title">What <span>we do.</span></h2>
+      <div className="revival-card-grid founding-services">
+        {content.cards.map((card, index) => {
+          const Icon = icons[index];
           return <article className="revival-card" key={card.title}>
-            <div className="card-top">
-              <Icon size={25} strokeWidth={1.4} />
-              <span>0{i + 1}</span>
-            </div>
-            <h3>
-              {card.title}
-            </h3>
-            <p>
-              {card.body}
-            </p>
+            <div className="card-top"><Icon size={25} strokeWidth={1.4} /><span>0{index + 1}</span></div>
+            <h3>{card.title}</h3><p>{card.body}</p>
           </article>;
         })}
+      </div>
+    </section>
+
+    <section className="program-section" id="the-program" aria-labelledby="team-duties-title">
+      <div className="revival-section">
+        <div className="section-kicker"><span>03 / WHAT YOUR TEAM DOES</span></div>
+        <div className="founding-duties">
+          <div><h2 id="team-duties-title">What your <span>team does.</span></h2><p className="founding-ownership">Everything else is ours.</p></div>
+          <ul>{content.teamDuties.map((duty) => <li key={duty}><Check size={21} aria-hidden="true" /><span>{duty}</span></li>)}</ul>
         </div>
-      </section>
-      <section className="revival-section process-section" id="how-it-works">
-        <div className="section-kicker">
-          <span>02 / HOW IT WORKS</span>
-          <span>A CLEAR PATH TO YOUR NEXT CONSULT</span>
+      </div>
+    </section>
+
+    <section className="revival-section founding-fit" id="who-this-is-for" aria-labelledby="fit-title">
+      <div className="section-kicker"><span>04 / WHO THIS IS FOR</span></div>
+      <div className="founding-editorial"><h2 id="fit-title">Who this <span>is for.</span></h2><p>{content.audience}</p></div>
+    </section>
+
+    <section className="revival-section" id="team" aria-labelledby="why-title">
+      <div className="section-kicker"><span>05 / WHY WE START AFTER THE INQUIRY</span></div>
+      <div className="founding-editorial">
+        <h2 id="why-title">Why we start <span>after the inquiry.</span></h2>
+        <div><p className="founding-placeholder">{content.josh}</p><p>{content.why}</p></div>
+      </div>
+    </section>
+
+    <section className="revival-section founding-questions" id="questions" aria-labelledby="questions-title">
+      <div className="section-kicker"><span>06 / QUESTIONS</span></div>
+      <h2 id="questions-title">Questions<span>?</span></h2>
+      <div className="founding-faq-list">{content.questions.map(({ question, answer }) => <details key={question}>
+        <summary>{question}<Plus size={20} aria-hidden="true" /></summary><p>{answer}</p>
+      </details>)}</div>
+    </section>
+
+    <section className="contact-section" id="contact" aria-labelledby="audit-title">
+      <HeroAtmosphere />
+      <div className="revival-section">
+        <div className="section-kicker"><span>07 / YOUR FREE AUDIT</span></div>
+        <div className="report-layout">
+          <div><h2 id="audit-title">Get your <span>free audit.</span></h2><p className="section-copy">{content.closing}</p></div>
+          <ContactForm />
         </div>
-        <h2>Find. Revive. <span>Fill.</span></h2>
-        <div className="revival-steps">
-          {content.steps.map((step, i) => <article key={step.title}>
-            <span className="large-number">0{i + 1}</span>
-            <h3>
-              {step.title}
-              <span aria-hidden="true">↗</span>
-            </h3>
-            <p>
-              {step.body}
-            </p>
-          </article>)}
-        </div>
-      </section>
-      <section className="program-section" id="the-program">
-        <div className="revival-section">
-          <div className="section-kicker">
-            <span>03 / WHY WE’RE DIFFERENT</span>
-            <span>ONE CONNECTED SYSTEM</span>
-          </div>
-          <div className="program-layout">
-            <div className="program-intro">
-              <h2>Everything between your ad and your chair, <span>handled.</span></h2>
-              <p>Most agencies stop at the lead and leave your front desk to chase it. We own every step until the consult is on your calendar, and we only get paid when it is.</p>
-              <Link className="text-link" href="#contact">Find your opportunity <ArrowUpRight size={18} /></Link>
-              <div className="program-seal" aria-hidden="true"><BrandMark /><span>FIND. REVIVE. FILL.</span></div>
-            </div>
-            <div className="program-list">
-              {content.program.map((item, i) => <article key={item.title}>
-                <span>0{i + 1}</span>
-                <div>
-                  <h3>
-                    {item.title}
-                  </h3>
-                  <p>
-                    {item.body}
-                  </p>
-                </div>
-              </article>)}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="revival-section team-section" id="team">
-        <div className="section-kicker">
-          <span>04 / THE TEAM</span>
-          <span>THE PEOPLE BEHIND THE CONVERSATIONS</span>
-        </div>
-        <div className="team-heading">
-          <h2>Built by salespeople,<br /><span>not ad buyers.</span></h2>
-          <p>Most agencies can get you leads. We know how to turn a lead into a conversation, and a conversation into a booked consult.</p>
-        </div>
-        <div className="team-grid">
-          <article>
-            <div className="portrait-placeholder">
-              <span>J</span>
-              <small>[Kim’s headshot coming]</small>
-            </div>
-            <div className="team-name">
-              <h3>Kim</h3>
-              <span>CO-FOUNDER / REVIVAL AND SALES</span>
-            </div>
-            <p>
-              {content.josh}
-            </p>
-          </article>
-          <article>
-            <div className="portrait-placeholder carson">
-              <span>C</span>
-              <small>[Carson’s headshot coming]</small>
-            </div>
-            <div className="team-name">
-              <h3>Carson</h3>
-              <span>CO-FOUNDER / [ROLE]</span>
-            </div>
-            <p className="placeholder-copy">[Bio coming]</p>
-          </article>
-          <article>
-            <div className="portrait-placeholder carson">
-              <span>C</span>
-              <small>[Gana’s headshot coming]</small>
-            </div>
-            <div className="team-name">
-              <h3>Gana</h3>
-              <span>CO-FOUNDER / [ROLE]</span>
-            </div>
-            <p className="placeholder-copy">[Bio coming]</p>
-          </article>
-        </div>
-      </section>
-      <section className="revival-section" id="the-math">
-        <div className="section-kicker">
-          <span>05 / THE MATH</span>
-          <span>YOUR NUMBERS. A CLEARER PICTURE.</span>
-        </div>
-        <div className="math-layout">
-          <div>
-            <h2>You only need <span>one case</span> to come out ahead.</h2>
-            <p className="section-copy">
-              {content.math}
-            </p>
-            <p className="availability">
-              <span className="live-dot" />
-              {content.scarcity}
-            </p>
-          </div>
-          <div className="guarantee-card">
-            <div className="eyebrow"><Check size={17} /> OUR BOOKING GUARANTEE</div>
-            <div className="guarantee-number">6<span> / 30</span></div>
-            <h3>6 booked consults in 30 days.</h3>
-            <p>
-              {content.guarantee}
-            </p>
-            <div className="guarantee-fine">
-              {content.finePrint}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="contact-section" id="contact">
-        <HeroAtmosphere />
-        <div className="revival-section">
-          <div className="section-kicker">
-            <span>06 / BOOK A CALL</span>
-            <span>YOUR NEXT CHAPTER STARTS HERE</span>
-          </div>
-          <div className="report-layout">
-            <div>
-              <h2>Find out what your <span>old leads are worth.</span></h2>
-              <p className="section-copy">
-                {content.closing}
-              </p>
-              <div className="report-includes">
-                <span><Check size={17} /> Response speed</span>
-                <span><Check size={17} /> Unanswered calls</span>
-                <span><Check size={17} /> Unbooked lead value</span>
-              </div>
-            </div>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-    </>;
+      </div>
+    </section>
+  </div>;
 }
