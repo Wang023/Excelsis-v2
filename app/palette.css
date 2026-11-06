@@ -273,3 +273,15 @@ textarea:focus-visible, select:focus-visible { outline-color: var(--focus-color)
   .back-to-top { transition: none; }
   .back-to-top:hover { transform: none; }
 }
+
+/* Supplied Excelsis E-arrow wordmark, recolored for dark brand surfaces. */
+.brand-logo { display: block; width: 216px; height: auto; max-width: 100%; }
+.revival-header .logo, .revival-footer .logo { display: inline-flex; flex-shrink: 0; }
+.revival-footer .brand-logo { width: 240px; }
+@media (max-width: 1100px) {
+  .revival-header .brand-logo { width: 190px; }
+}
+@media (max-width: 540px) {
+  .revival-header .brand-logo { width: 174px; }
+}
+.revival-header .brand-logo { max-width: calc((var(--site-header-height) - 8px) * 3); }

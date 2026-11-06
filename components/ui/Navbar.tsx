@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import BrandMark from "./BrandMark";
+import BrandLogo from "./BrandLogo";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 
@@ -29,7 +29,7 @@ export default function Navbar() {
   }, [open]);
 
   return <header ref={headerRef} className="revival-header">
-    <Link href="/" className="logo" aria-label="Excelsis Acquisition home"><BrandMark /> excelsis<span className="logo-dot">®</span></Link>
+    <Link href="/" className="logo" aria-label="Excelsis Acquisition home"><BrandLogo /></Link>
     <nav id="main-navigation" aria-label="Main navigation" className={open ? "open" : ""}>
       {links.map(([label, id], index) => <Link key={id} href={"/#" + id} style={{ "--nav-delay": `${index * 35}ms` } as CSSProperties} onClick={() => setOpen(false)}>{label}</Link>)}
     </nav>
