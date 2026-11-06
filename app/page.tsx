@@ -4,6 +4,7 @@ import ContactForm from "@/components/sections/ContactForm";
 import HeroHeadline from "@/components/sections/HeroHeadline";
 import HeroAtmosphere from "@/components/sections/HeroAtmosphere";
 import LeadConsole from "@/components/sections/LeadConsole";
+import LaunchRoadmap from "@/components/sections/LaunchRoadmap";
 import { content } from "./content";
 
 const icons = [RotateCcw, Timer, CalendarCheck, MessageCircle, RefreshCw, Target, ChartNoAxesCombined];
@@ -35,9 +36,7 @@ export default function Home() {
     <section className="revival-section process-section" id="how-it-works" aria-labelledby="timeline-title">
       <div className="section-kicker"><span>01 / YOUR FIRST 90 DAYS</span></div>
       <h2 id="timeline-title">Your first <span>90 days.</span></h2>
-      <ol className="founding-timeline">
-        {content.steps.map((step) => <li key={step.title}><span className="timeline-day">{step.title}</span><p>{step.body}</p></li>)}
-      </ol>
+      <LaunchRoadmap />
     </section>
 
     <section className="revival-section" id="what-we-do" aria-labelledby="services-title">

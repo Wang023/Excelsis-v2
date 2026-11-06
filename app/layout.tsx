@@ -8,6 +8,7 @@ import "./revival.css";
 import "./palette.css";
 import "./hero-console.css";
 import "./founding.css";
+import "./roadmap.css";
 export const metadata: Metadata = {
   title: {
     default: "Excelsis Acquisition — Start more Invisalign cases.",
