@@ -1,0 +1,72 @@
+/* A single question at a time, using the existing navy/coral brand palette. */
+.report-form.audit-wizard {
+  padding: clamp(24px, 3vw, 38px);
+  border-radius: 22px;
+  border: 1px solid #14213D26;
+  background: #14213D05;
+  box-shadow: 0 18px 50px #0B13280A;
+  color: var(--navy);
+  --audit-muted: #5b6070;
+  --audit-border: #14213D26;
+  --audit-icon: var(--ember);
+  --audit-track: #14213D14;
+  --audit-error: #9d2e2c;
+}
+.contact-section .report-form.audit-wizard {
+  background: #0B1328E6;
+  border-color: #F4EDE026;
+  color: var(--cream);
+  box-shadow: inset 0 1px 0 #F4EDE00A, 0 22px 70px #0B132833;
+  --audit-muted: #F4EDE0B3;
+  --audit-border: #F4EDE026;
+  --audit-icon: var(--coral-soft);
+  --audit-track: #F4EDE014;
+  --audit-error: var(--coral-soft);
+}
+.audit-wizard-header { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.audit-eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 1.6px; }
+.audit-step-count { font-size: 11px; color: var(--audit-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.audit-progress { display: block; appearance: none; border: 0; width: 100%; height: 4px; margin: 19px 0 30px; border-radius: 4px; overflow: hidden; background: var(--audit-track); color: var(--coral); }
+.audit-progress::-webkit-progress-bar { background: var(--audit-track); border-radius: 4px; }
+.audit-progress::-webkit-progress-value { background: var(--coral); border-radius: 4px; transition: width 250ms ease; }
+.audit-progress::-moz-progress-bar { background: var(--coral); border-radius: 4px; }
+.audit-question { min-height: 280px; animation: audit-question-in 260ms ease-out; }
+.audit-question-icon { display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid var(--audit-border); border-radius: 16px; color: var(--audit-icon); background: #FF6B5B0D; margin-bottom: 22px; }
+.report-form.audit-wizard .audit-question label { display: block; margin: 0 0 10px; min-height: 64px; font-family: "Manrope", Arial, sans-serif; font-size: clamp(23px, 2.2vw, 30px); font-weight: 500; line-height: 1.25; letter-spacing: -.8px; }
+.audit-question-hint { min-height: 38px; font-size: 13px; line-height: 1.6; color: var(--audit-muted); margin: 0 0 20px; }
+.report-form.audit-wizard .audit-question input { border-radius: 10px; padding: 17px 16px; min-height: 58px; font-size: 16px; }
+.report-form.audit-wizard .audit-question input[aria-invalid="true"] { border-color: var(--audit-error); }
+.audit-error-space { min-height: 38px; padding-top: 9px; }
+.audit-error { color: var(--audit-error); font-size: 12px; line-height: 1.5; }
+.audit-actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.report-form.audit-wizard .audit-actions .button { width: auto; margin: 0 0 0 auto; min-height: 54px; padding: 13px 20px; gap: 22px; font-size: 13px; }
+.audit-back, .audit-text-button { display: inline-flex; gap: 8px; align-items: center; padding: 10px 0; color: inherit; background: transparent; border: 0; font-size: 12px; }
+.audit-back:hover, .audit-text-button:hover { color: var(--audit-icon); }
+.audit-back > svg { transition: transform 180ms ease; }
+.audit-back:hover > svg { transform: translateX(-3px); }
+.audit-enter-hint { text-align: right; color: var(--audit-muted); font-size: 10px; line-height: 1.6; margin-top: 12px; }
+.audit-wizard .report-reassurance { font-size: 12px; margin: 25px 0 12px; }
+.report-form.audit-wizard .audit-delivery-note, .report-form.audit-wizard .audit-privacy { color: var(--audit-muted); font-size: 10px; line-height: 1.8; text-align: center; }
+.report-form.audit-wizard .audit-privacy { border-top: 1px solid var(--audit-border); padding-top: 18px; margin: 20px 0 0; }
+.audit-success { animation: audit-question-in 260ms ease-out; }
+.audit-success h3 { font-size: 28px; line-height: 1.2; letter-spacing: -.8px; font-weight: 500; margin: 0 0 18px; }
+.audit-success h3:focus { outline: none; }
+.audit-success > p { color: var(--audit-muted); font-size: 14px; line-height: 1.8; }
+.report-form.audit-wizard .audit-success > .button { margin: 24px 0 20px; font-size: 13px; }
+.audit-review { border-top: 1px solid var(--audit-border); border-bottom: 1px solid var(--audit-border); padding: 16px 0; margin: 0 0 12px; }
+.audit-review summary { cursor: pointer; font-size: 12px; color: var(--audit-muted); }
+.report-form.audit-wizard .audit-review textarea { margin-top: 16px; font-size: 12px; }
+@keyframes audit-question-in { from { opacity: .4; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 540px) {
+  .report-form.audit-wizard { padding: 24px 20px; border-radius: 18px; }
+  .audit-eyebrow { font-size: 8px; letter-spacing: 1.2px; }
+  .audit-step-count { font-size: 10px; }
+  .report-form.audit-wizard .audit-question label { font-size: 24px; }
+  .report-form.audit-wizard .audit-actions .button { padding: 12px 16px; gap: 10px; font-size: 12px; }
+  .audit-enter-hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .audit-question, .audit-success { animation: none; }
+  .audit-progress::-webkit-progress-value, .audit-back > svg { transition: none; }
+  .audit-back:hover > svg { transform: none; }
+}
